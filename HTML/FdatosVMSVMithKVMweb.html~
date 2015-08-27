@@ -1,0 +1,32 @@
+<head>
+	<title>
+		Creador web de maquinvas virtuales
+	</title>
+</head>
+
+ <!-- Solo para tener en cuenta, asi se realizan los comentarios en HTML--> 
+<body bgcolor="#E6FFFF">
+	<h1><b>Por favor, ingrese las especificaciones desedas a la maquina virtual.</b></h1>
+	<form action="/datosvm" method="post">
+	    <hr> <br>
+	    <p> Nombre de la maquinva virtual -> <input name="nombre" type="text" /> </p>
+	    <p>Escoja el sistema operativo entre alguno de los siguientes:</p>
+
+		<select name="so">
+		<option value="ubuntutrusty">Ubuntu 14 Trusty Tahr</option>
+		<option value="ubuntuprecise">Ubuntu 12 Precise Pangolin</option>
+		<option value="fedora21">Fedora 21</option>
+		<option value="fedora20">Fedora 22</option>
+		<option value="debiansqueeze">Debian Squeeze</option>
+		<option value="debianlenny">Debian Lenny</option>
+		<option value="rhel6">Red Hat 6</option>
+		<option value="rhel5.4">Red Hat 5.4</option>
+		</select>
+
+	    <p>Memoria de la maquinva virtual en MB-> <input name="memoria" type="text" /> </p>
+	    <p>Espacio en disco de la maquinva virtual en GB-> <input name="disco" type="text" /> </p>
+	    <p>Interfaz para el bridge de la maquinva virtual (entre wlan0, eth0 y eth1)-> <input name="interfaz" type="text" /> </p>
+	    <p>Direccion de hubicacion de la imagen de la VM-> <input name="direccion" type="text" /> </p>
+	    <p><input value="Aceptar" type="submit" /> </p>
+	</form>
+</body>

@@ -30,7 +30,7 @@ def do_login():
 
 @route('/datosvm')
 def datosvm():
-    salida = commands.getstatusoutput('cat /home/juan/Proyecto\ integrador/Codigos\ creacion\ Vms/Python/datosvm.html')
+    salida = commands.getstatusoutput('cat /home/juan/Proyecto\ integrador/repositorio/HTML/FdatosVMSVMithKVMweb.html')
     return ''''''+salida[1]
 
 @route('/datosvm',method='POST')
@@ -58,7 +58,7 @@ def crearvm(nombre,so,memoria,disco,interfaz,direccion):
     salida = commands.getstatusoutput('mkdir '+ direccion + '/' + nombre)
     print salida[1]
 
-    comando = 'virt-install  --connect qemu:///system --virt-type kvm --name ' + nombre + ' --ram ' + memoria + ' --disk path=/home/juan/KVMs/'+nombre+'/'+nombre+'.img,size=' + disco + ' --network bridge=virbr0 --graphics vnc --boot network=on --os-type linux --os-variant ' + so + ' --noreboot'
+    comando = 'virt-install  --connect qemu:///system --virt-type kvm --name ' + nombre + ' --ram ' + memoria + ' --disk path=/home/juan/KVMs/'+nombre+'/'+nombre+'.img,size=' + disco + ' --network bridge=' + interfaz + ' --graphics vnc --boot network=on --os-type linux --os-variant ' + so + ' --noreboot'
     salida = commands.getstatusoutput(comando)
     print salida[1]
     return '''La maquina fue creada con exito''' + datosvm()
